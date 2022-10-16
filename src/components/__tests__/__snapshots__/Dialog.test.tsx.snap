@@ -1,0 +1,84 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render successfully render snapshot 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "rgba(4, 36, 68, 0.8)",
+      "height": 1334,
+      "justifyContent": "center",
+      "position": "absolute",
+      "width": 750,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "white",
+        "borderRadius": 10,
+        "height": 200,
+        "justifyContent": "center",
+        "width": 700,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#d9d7d7",
+          "borderRadius": 50,
+          "height": 50,
+          "justifyContent": "center",
+          "width": 50,
+        }
+      }
+    >
+      <Text
+        allowFontScaling={false}
+        selectable={false}
+        style={
+          Array [
+            Object {
+              "color": "red",
+              "fontSize": 26,
+            },
+            undefined,
+            Object {
+              "fontFamily": "Ionicons",
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+            },
+            Object {},
+          ]
+        }
+      >
+        
+      </Text>
+    </View>
+    <Text
+      style={
+        Object {
+          "color": "black",
+          "fontSize": 20,
+          "fontWeight": "600",
+          "margin": 10,
+        }
+      }
+    />
+    <Text
+      style={
+        Object {
+          "color": "black",
+          "fontSize": 14,
+          "marginHorizontal": 40,
+          "textAlign": "center",
+        }
+      }
+    />
+  </View>
+</View>
+`;
