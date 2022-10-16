@@ -5,6 +5,7 @@ import { RestAPI } from "../api/RestAPI";
 import { RootParamList } from "../navigator/StackNavigation";
 import { Results } from "../utils/ResponseModel";
 import { ternary } from "../utils/Tools";
+import PrecentageChart from "../components/PrecentageChart";
 
 type MovieListScreenProps = NativeStackScreenProps<RootParamList, 'MovieListScreen'>;
 
@@ -33,7 +34,14 @@ const MovieListScreen: FC<MovieListScreenProps> = () => {
                 <Image source={{ uri: 'https://image.tmdb.org/t/p/w500' + item?.poster_path, width: 150, height: 200 }} style={styles.image} />
 
                 <View style={styles.chartContainer}>
-                    <Text style={styles.precentage}>{item.popularity.toFixed(0)}%</Text>
+                    <PrecentageChart
+                        color={"#04d11c"}
+                        shadowColor={"#999"}
+                        bgColor={"#042444"}
+                        radius={25}
+                        borderWidth={5}
+                        percent={item.popularity}
+                    />
                 </View>
 
                 <View style={styles.container}>
@@ -145,16 +153,13 @@ const styles = StyleSheet.create({
     },
     chartContainer: {
         width: 40,
-        height: 40,
+        height: 30,
         borderRadius: 50,
-        backgroundColor: '#042444',
         position: 'absolute',
         top: 192,
         left: 64,
         alignItems: 'center',
         justifyContent: 'center',
-        borderColor: '#04d11c',
-        borderWidth: 2
     },
     precentage: {
         color: 'white',
