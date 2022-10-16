@@ -6,3 +6,6 @@ Use the The Movie Database top rated movies API to fetch data.
 # Install  
 # RN 0.70
 npm i
+
+# Run App  
+npx react-native run-android
