@@ -12,11 +12,11 @@ type MovieListScreenProps = NativeStackScreenProps<RootParamList, 'MovieListScre
 const MovieListScreen: FC<MovieListScreenProps> = () => {
 
     const [topRelated, setTopRelated] = useState<Results[]>([]);
-    const [data, setData] = useState<{ isLoading: boolean, pageNo: number }>({ isLoading: true, pageNo: 1 })
+    const [data, setData] = useState<{ isLoading: boolean, pageNo: number, rederID: number }>({ isLoading: true, pageNo: 1, rederID: 0 })
 
     useEffect(() => {
         fetchAPIData()
-    }, [data.isLoading])
+    }, [data.rederID])
 
     function fetchAPIData() {
         RestAPI(data.pageNo.toString()).then(res => {
@@ -62,12 +62,12 @@ const MovieListScreen: FC<MovieListScreenProps> = () => {
     }
 
     const onHandleEndReach = () => {
-        setData({ isLoading: true, pageNo: data.pageNo + 1 })
+        setData({ isLoading: true, pageNo: data.pageNo + 1, rederID: new Date().getUTCMilliseconds() })
     }
 
     const onRefreshHandle = () => {
         setTopRelated([]);
-        setData({ isLoading: true, pageNo: 1 })
+        setData({ isLoading: true, pageNo: 1, rederID: new Date().getUTCMilliseconds() })
     }
 
     return (
